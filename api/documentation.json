@@ -1,0 +1,50 @@
+{
+  "BASE_URL": "http://localhost:4000/api/v1",
+  "ENPONT_CONFIG": [
+    {
+      "url": "/user/get-all-user",
+      "method": "GET",
+      "path_params": null,
+      "query_params": {
+        "page": 1
+      }
+    },
+    {
+      "url": "/user/create-user",
+      "method": "POST",
+      "path_params": null,
+      "body_params": {
+        "content": {
+          "application/json": {
+            "firstName": {
+              "type": "string"
+            },
+            "lastName": {
+              "type": "string"
+            },
+            "phoneNum": {
+              "type": "int"
+            },
+            "email": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string"
+            },
+            "dateOfBirth": {
+              "type": "date"
+            }
+          },
+          "required": [
+            "firstName",
+            "lastName",
+            "phoneNum",
+            "email",
+            "password",
+            "dateOfBirth"
+          ]
+        }
+      }
+    }
+  ]
+}
