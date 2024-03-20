@@ -24,11 +24,11 @@ Server started at http://localhost:4000
 
 1. Clone this repository to your local machine:
    ```
-   git clone https://github.com/your-username/express-server-template.git
+   git clone https://github.com/Oludayo20/ExpatSwap
    ```
 2. Navigate to the project directory:
    ```
-   cd express-server-template
+   cd ExpatSwap
    ```
 3. Install dependencies:
    ```
@@ -55,29 +55,9 @@ app.initializedRoutes(routes);
 app.listen();
 ```
 
-### Initializing Routes
+### Routes
 
-Routes can be initialized by passing an array of route objects to the `initializedRoutes()` method of the `App` instance. Each route object should contain a `router` property, which is an instance of Express Router.
-
-```javascript
-import express from 'express';
-const router = express.Router();
-
-// Define routes
-router.get('/', (req, res) => {
-  res.send('Hello, World!');
-});
-
-export default router;
-```
-
-```javascript
-// index.js
-import userRoutes from './userRoutes.js';
-
-const routes = [userRoutes];
-export default routes;
-```
+Routes can be found in the route folder
 
 ## Documentation
 
@@ -92,6 +72,58 @@ export default routes;
 ### Database
 
 The `DatabaseConnector` class in `dbConnection.js` connects the server to MongoDB using Mongoose. It includes event listeners for handling connection and error events.
+
+## Base URL
+
+The base URL for all API endpoints is `http://localhost:4000/api/v1`.
+
+## Endpoint Configuration
+
+### Get All Users
+
+- **URL:** `/user/get-all-user`
+- **Method:** `GET`
+- **Query Parameters:**
+  - `page` (optional): Specifies the page number for pagination. Default value is 1.
+
+### Create User
+
+- **URL:** `/user/create-user`
+- **Method:** `POST`
+- **Body Parameters:**
+  - `firstName` (string, required): First name of the user.
+  - `lastName` (string, required): Last name of the user.
+  - `phoneNum` (integer, required): Phone number of the user.
+  - `email` (string, required): Email address of the user.
+  - `password` (string, required): Password of the user.
+  - `dateOfBirth` (date, required): Date of birth of the user.
+
+## Example Usage
+
+### Get All Users
+
+```http
+GET /api/v1/user/get-all-user?page=1
+```
+
+### Create User
+
+```http
+POST /api/v1/user/create-user
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "phoneNum": 1234567890,
+  "email": "john.doe@example.com",
+  "password": "password123",
+  "dateOfBirth": "1990-01-01"
+}
+```
+
+## License
+
+This API documentation is released under the [MIT License](LICENSE).
 
 ## Contributing
 
