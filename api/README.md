@@ -28,7 +28,7 @@ Server started at http://localhost:4000
    ```
 2. Navigate to the project directory:
    ```
-   cd ExpatSwap
+   cd ExpatSwap/api
    ```
 3. Install dependencies:
    ```

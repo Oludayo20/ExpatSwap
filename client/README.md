@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# Expatswap - Api
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a `React JS` project
 
-## Available Scripts
+First, run the development server:
 
-In the project directory, you can run:
+```bash
+npm start
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js installed on your local machine
+- MongoDB installed and running locally or remotely
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone this repository to your local machine:
+   ```
+   git clone https://github.com/Oludayo20/ExpatSwap
+   ```
+2. Navigate to the project directory:
+   ```
+   cd ExpatSwap/client
+   ```
+3. Install dependencies:
+   ```
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# CreateUser Component
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The `CreateUser` component is a React component used for creating a new user. It provides a form where users can input their personal information such as first name, last name, email, phone number, password, and date of birth. This component also includes client-side validation for email and password fields.
 
-### `npm run eject`
+## Dependencies
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- [React](https://reactjs.org/)
+- [React Router DOM](https://reactrouter.com/web/guides/quick-start)
+- [React Toastify](https://fkhadra.github.io/react-toastify/introduction/)
+- [Axios](https://axios-http.com/)
+- [Helmet](https://www.npmjs.com/package/react-helmet)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Functionality
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Users can input their personal information in the provided form fields.
+- Client-side validation is performed for the email and password fields:
+  - Email validation ensures that the email format is valid.
+  - Password validation ensures that the password meets the required criteria (8 to 24 characters, includes uppercase and lowercase letters, a number, and a special character).
+- When the form is submitted, a POST request is sent to the server to create the user.
+- Feedback is provided to the user through toast notifications:
+  - Success message is displayed upon successful user creation.
+  - Error messages are displayed for various error scenarios, such as server response errors, missing fields, and duplicate email addresses.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Props
 
-## Learn More
+The `CreateUser` component does not accept any props.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# AllUser Component
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The `AllUser` component is a React component used for displaying a list of all users. It fetches user data from an API and allows users to filter users by date of birth. The component includes pagination for navigating through multiple pages of user data.
 
-### Code Splitting
+## Dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- [React](https://reactjs.org/)
+- [axios](https://axios-http.com/)
+- [react-toastify](https://fkhadra.github.io/react-toastify/introduction/)
 
-### Analyzing the Bundle Size
+## Functionality
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- The component fetches user data from an API endpoint when it mounts.
+- Users can filter users by date of birth using start and end date inputs.
+- Pagination allows users to navigate through multiple pages of user data.
+- Toast notifications are displayed for various error scenarios, such as server response errors.
 
-### Making a Progressive Web App
+## Props
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The `AllUser` component does not accept any props.
 
-### Advanced Configuration
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This component is released under the [MIT License](LICENSE).
